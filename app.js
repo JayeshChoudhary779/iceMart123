@@ -3,8 +3,8 @@ import cors from "cors";
 import userRouter from "./routes/user.js";
 import auth from "./middleware/auth.js";
 import mongoose from "mongoose";
-// import key from "./config/keys.js";
-// const { MONGOURI } = key;
+import key from "./config/keys.js";
+const { MONGOURI } = key;
 
 const app = express();
 app.use(cors());
@@ -12,9 +12,7 @@ app.use(express.json()); // default middleware to parse req data into json.
 
 app.use("/user", userRouter);
 const PORT = process.env.PORT || 5000;
-const MONGOURI =
-  process.env.MONGOURI ||
-  "mongodb+srv://Jayesh:blMZtk5j9jdetgAD@cluster0.tdjdg.mongodb.net/icedata?retryWrites=true&w=majority";
+// const MONGOURI = process.env.MONGOURI;
 
 mongoose
   .connect(MONGOURI, {
