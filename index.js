@@ -3,8 +3,8 @@ import cors from "cors";
 import userRouter from "./routes/user.js";
 import auth from "./middleware/auth.js";
 import mongoose from "mongoose";
-import key from "./config/keys";
-const { MONGOURL } = key;
+import key from "./config/keys.js";
+const { MONGOURI } = key;
 const app = express();
 app.use(cors());
 app.use(express.json()); // default middleware to parse req data into json.
@@ -13,7 +13,7 @@ app.use("/user", userRouter);
 const PORT = process.env.PORT || 5000;
 
 mongoose
-  .connect(MONGOURL, {
+  .connect(MONGOURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

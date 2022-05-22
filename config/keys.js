@@ -1,5 +1,5 @@
-import dev from "./dev";
-import prod from "./prod";
+import dev from "./dev.js";
+import prod from "./prod.js";
 
 let key = {};
 

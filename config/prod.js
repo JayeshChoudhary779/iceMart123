@@ -1,5 +1,5 @@
 const prod = {
   JWT_SECRET: process.env.JWT_SECRET,
-  MONGOURL: process.env.MONGOURL,
+  MONGOURI: process.env.MONGOURI,
 };
 export default prod;

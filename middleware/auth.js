@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import key from "../config/keys";
+import key from "../config/keys.js";
 const { JWT_SECRET } = key;
 
 const auth = async (req, res, next) => {
